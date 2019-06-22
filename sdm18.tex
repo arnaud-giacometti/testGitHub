@@ -1,0 +1,184 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%  ltexpprt.tex  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is ltexpprt.tex, an example file for use with the SIAM LaTeX2E
+% Preprint Series macros. It is designed to provide double-column output.
+% Please take the time to read the following comments, as they document
+% how to use these macros. This file can be composed and printed out for
+% use as sample output.
+
+% Any comments or questions regarding these macros should be directed to:
+%
+%                 Donna Witzleben
+%                 SIAM
+%                 3600 University City Science Center
+%                 Philadelphia, PA 19104-2688
+%                 USA
+%                 Telephone: (215) 382-9800
+%                 Fax: (215) 386-7999
+%                 e-mail: witzleben@siam.org
+
+
+% This file is to be used as an example for style only. It should not be read
+% for content.
+
+%%%%%%%%%%%%%%% PLEASE NOTE THE FOLLOWING STYLE RESTRICTIONS %%%%%%%%%%%%%%%
+
+%%  1. There are no new tags.  Existing LaTeX tags have been formatted to match
+%%     the Preprint series style.
+%%
+%%  2. You must use \cite in the text to mark your reference citations and
+%%     \bibitem in the listing of references at the end of your chapter. See
+%%     the examples in the following file. If you are using BibTeX, please
+%%     supply the bst file with the manuscript file.
+%%
+%%  3. This macro is set up for two levels of headings (\section and
+%%     \subsection). The macro will automatically number the headings for you.
+%%
+%%  5. No running heads are to be used for this volume.
+%%
+%%  6. Theorems, Lemmas, Definitions, etc. are to be double numbered,
+%%     indicating the section and the occurence of that element
+%%     within that section. (For example, the first theorem in the second
+%%     section would be numbered 2.1. The macro will
+%%     automatically do the numbering for you.
+%%
+%%  7. Figures, equations, and tables must be single-numbered.
+%%     Use existing LaTeX tags for these elements.
+%%     Numbering will be done automatically.
+%%
+%%  8. Page numbering is no longer included in this macro.
+%%     Pagination will be set by the program committee.
+%%
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\documentclass[twoside,leqno,twocolumn]{article}
+\usepackage{ltexpprt}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[french]{babel}
+\usepackage{xspace}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{latexsym} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+%\usepackage{subfig}
+\usepackage{latexsym} 
+%\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage[pdf]{pstricks}
+%\usepackage{pst-plot}
+%\usepackage{epstopdf}
+
+
+\newcommand{\dom}[1]{\ensuremath{dom({#1})}\xspace}
+\newcommand{\subspace}[0]{\ensuremath{{\mathbb{S}}}\xspace}
+\newcommand{\bd}[0]{\ensuremath{{S}}\xspace}
+\newcommand{\lang}[0]{\ensuremath{{\cal L}}\xspace}
+%\newcommand{\langA}[0]{\ensuremath{\lang_{act}}\xspace}
+%\newcommand{\langF}[0]{\ensuremath{\lang_{f\!ull}}\xspace}
+\newcommand{\langA}[0]{\ensuremath{\lang(\bd)}\xspace}
+%\newcommand{\Dim}[0]{\ensuremath{{\cal D}}\xspace}
+\newcommand{\Dim}[0]{\ensuremath{{\mathbb{D}}}\xspace}
+\newcommand{\langF}[0]{\ensuremath{\lang(\Dim)}\xspace}
+\newcommand{\normParam}[2]{\ensuremath{\lVert {#1} \rVert_{#2}}\xspace}
+\newcommand{\norm}[1]{\ensuremath{\normParam{#1}{}}\xspace}
+\newcommand{\normOne}[1]{\ensuremath{\normParam{#1}{1}}\xspace}
+\newcommand{\normTwo}[1]{\ensuremath{\normParam{#1}{2}}\xspace}
+\newcommand{\normInf}[1]{\ensuremath{\normParam{#1}{\infty}}\xspace}
+\newcommand{\tuple}[1]{\ensuremath{\langle{#1}\rangle}\xspace}
+\newcommand{\density}[0]{\ensuremath{d}\xspace}
+%\newcommand{\density}[0]{\ensuremath{density}\xspace}
+\newcommand{\densityParam}[1]{\ensuremath{\density_{#1}}\xspace}
+\newcommand{\densityOne}[0]{\ensuremath{\densityParam{1,r}}\xspace}
+\newcommand{\densityTwo}[0]{\ensuremath{\densityParam{2,r}}\xspace}
+\newcommand{\densityInf}[0]{\ensuremath{\densityParam{\infty,r}}\xspace}
+\newcommand{\card}[1]{\ensuremath{|{#1}|}\xspace}
+%\newcommand{\neighbor}[0]{\ensuremath{neighbor}\xspace}
+\newcommand{\neighbor}[0]{\ensuremath{n}\xspace}
+\newcommand{\neighborParam}[1]{\ensuremath{\neighbor_{#1}}\xspace}
+\newcommand{\neighborOne}[0]{\ensuremath{\neighborParam{1}}\xspace}
+\newcommand{\neighborTwo}[0]{\ensuremath{\neighborParam{2}}\xspace}
+\newcommand{\neighborInf}[0]{\ensuremath{\neighborParam{\infty}}\xspace}
+\newcommand{\affect}[0]{\ensuremath{:=}\xspace}
+\newcommand{\nnull}[1]{\ensuremath{{#1}_{/D}}\xspace}
+\newcommand{\Volume}[2]{\ensuremath{{\cal V}_{p}^{\card{#1}}(#2)}\xspace}
+\newcommand{\Ball}[2]{\ensuremath{{\cal B}_{p}^{\card{#1}}(#2)}\xspace}
+\newcommand{\proba}[1]{\ensuremath{\mathbb{P}({#1})}\xspace}
+
+\newcommand*{\qed}{\hfill\ensuremath{\square}}
+
+\begin{document}
+
+
+%\setcounter{chapter}{2} % If you are doing your chapter as chapter one,
+%\setcounter{section}{3} % comment these two lines out.
+
+\title{\Large Dense Neighborhood Pattern Sampling in Numerical Data}
+\author{Arnaud Giacometti$^*$ \and Arnaud Soulet\thanks{{University of Tours}, \texttt{firstname.lastname@univ-tours.fr}}}
+\date{}
+
+\maketitle
+
+% Copyright Statement
+% When submitting your final paper to a SIAM proceedings, it is requested that you include 
+% the appropriate copyright in the footer of the paper.  The copyright added should be 
+% consistent with the copyright selected on the copyright form submitted with the paper.
+% Please note that "20XX" should be changed to the year of the meeting.
+
+% Default Copyright Statement
+\fancyfoot[R]{\footnotesize{\textbf{Copyright \textcopyright\ 2018 by SIAM\\
+Unauthorized reproduction of this article is prohibited}}}
+
+% Depending on which copyright you agree to when you sign the copyright form, the copyright 
+% can be changed to one of the following after commenting out the default copyright statement
+% above.
+
+%\fancyfoot[R]{\footnotesize{\textbf{Copyright \textcopyright\ 20XX\\
+%Copyright for this paper is retained by authors}}}
+
+%\fancyfoot[R]{\footnotesize{\textbf{Copyright \textcopyright\ 20XX\\
+%Copyright retained by principal author's organization}}}
+
+
+%\pagenumbering{arabic}
+%\setcounter{page}{1}%Leave this line commented out.
+
+\begin{abstract}
+%Pattern mining in numerical data remains a challenging task due to the pattern search space that explodes with the dataset size.
+Pattern mining in numerical data remains a challenging task due to the pattern search space that becomes potentially infinite with real-valued dimensions. Most approaches reluctantly reduced the expressiveness of mined patterns to make possible extraction. Despite this expressiveness loss, they do not provide results within a short response time of a few seconds. This paper addresses the instant discovery of patterns in numerical data based on sampling techniques. Instead of splitting each dimension into intervals, we use a metric to introduce the density as new interestingness measure, and to define neighborhood patterns. The language of neighborhood patterns is semantically rich but in return, its size is infinite. We then present a new exact and non-enumerative random procedure to sample this infinite language according to density. An experimental study demonstrates the good compromise between precision and diversity of neighborhood patterns. Finally, in the context of associative classification, we show that a sample of neighborhood patterns is as accurate as traditional methods that traverses the entire search space.
+\end{abstract}
+
+\input{tex/introduction}
+\input{tex/related}
+\input{tex/problem}
+\input{tex/sampling}
+%\input{tex/optimizing}
+\input{tex/experiment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+\label{sec:Conclusion}
+
+We introduced a new pattern mining method in numerical data that abandons the paradigm of the complete enumeration to that of an instant access to the pattern language. An originality of our work is the proposal of neighborhood pattern which is a pattern structure that does not separately consider each dimension due to the use of a metric. The experimental study shows that neighborhood patterns have a high precision while maintaining excellent diversity in comparison with previous literature approaches. In the context of associative classification, a sample of neighborhood patterns gives an accuracy comparable to the traditional approaches traversing the entire search space. Despite the infinite number of neighborhood patterns, a new method was proposed to sample according to density without using a stochastic process. After a preliminary pass over the data, this three-step method is effective enough to instantly return patterns even on large datasets. 
+
+Our work goes in the direction of the interactive data exploration using pattern mining~\cite{GS17} that encourages a tight coupling between the user and the mining system. Although it focused on the density measure, we would like to extend this technique to other interestingness measures that may include user feedback. Rather than immediate use by an end-user, we also intend to benefit from this method of pattern sampling in numerical data as an elementary block for subspace clustering \cite{kriegel2009clustering} without considering discretization.
+
+%the construction of pattern-based models. %The semantics of neighborhood patterns should be an advantage for improving associative classifiers or tiling methods dedicated to numerical data. More generally, the cross-fertilization between pattern mining and clustering analysis is really promising for mining richer patterns.
+
+{\small
+\bibliographystyle{abbrv}%IEEEtran}
+\bibliography{sdm18}
+}
+
+
+\end{document}
+
+% End of ltexpprt.tex
